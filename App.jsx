@@ -1,10 +1,12 @@
 import './App.css'
-import WeatherApp from './Components/WeatherApp/WeatherApp'
+import CityTable from './Components/City/CityTable'
+// import WeatherApp from './Components/WeatherApp/WeatherApp'
 
 function App() {
   return (
     <>
-  <WeatherApp/>
+  <CityTable/>
+  {/* <WeatherApp/> */}
     </>
   )
 }
