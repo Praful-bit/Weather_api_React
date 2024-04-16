@@ -43,13 +43,14 @@ const CityTable = () => {
   };
 
   const handleCityClick = (cityName) => {
+    window.open(`${cityName}`, "_blank");
     setSelectedCity(cityName);
   };
-
+  
   return (
     <div className="container mx-auto px-4 py-8">
       {selectedCity ? (
-        <WeatherApp cityName={selectedCity} />
+        <WeatherApp cityName={selectedCity}/>
       ) : (
         <>
           <input

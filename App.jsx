@@ -5,8 +5,8 @@ import CityTable from './Components/City/CityTable'
 function App() {
   return (
     <>
-  <CityTable/>
   {/* <WeatherApp/> */}
+  <CityTable/>
     </>
   )
 }

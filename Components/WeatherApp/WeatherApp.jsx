@@ -63,6 +63,7 @@ const WeatherApp = ({ cityName }) => {
   }, [cityName]);
 
   return (
+    
     <div className="w-607px h-829px m-auto mt-20 rounded-xl bg-gradient-to-b from-purple-900 via-indigo-800 to-purple-900 " >
       <div className="mt-7 flex justify-center">
         <img src={wicon} alt="" />
