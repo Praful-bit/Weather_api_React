@@ -8,8 +8,10 @@ import humidity_icon from "../Assets/humidity.png";
 import snow_icon from "../Assets/snow.png";
 import wind_icon from "../Assets/wind.png";
 import rain_icon from "../Assets/rain.png";
+import { useParams } from "react-router-dom";
 
-const WeatherApp = ({ cityName }) => {
+const WeatherApp = () => {
+  const { cityName } = useParams();
   const [weatherData, setWeatherData] = useState(null);
   const [wicon, setWicon] = useState(cloud_icon);
 
@@ -21,32 +23,31 @@ const WeatherApp = ({ cityName }) => {
         const response = await axios.get(url);
         const data = response.data;
         setWeatherData(data);
-
         if (data.weather && data.weather.length > 0) {
           const icon = data.weather[0].icon;
           switch (icon) {
-            case '01d':
-            case '01n':
+            case "01d":
+            case "01n":
               setWicon(clear_icon);
               break;
-            case '02d':
-            case '02n':
+            case "02d":
+            case "02n":
               setWicon(cloud_icon);
               break;
-            case '03d':
-            case '03n':
-            case '04d':
-            case '04n':
+            case "03d":
+            case "03n":
+            case "04d":
+            case "04n":
               setWicon(drizzle_icon);
               break;
-            case '09d':
-            case '09n':
-            case '10d':
-            case '10n':
+            case "09d":
+            case "09n":
+            case "10d":
+            case "10n":
               setWicon(rain_icon);
               break;
-            case '13d':
-            case '13n':
+            case "13d":
+            case "13n":
               setWicon(snow_icon);
               break;
             default:
@@ -64,7 +65,7 @@ const WeatherApp = ({ cityName }) => {
 
   return (
     
-    <div className="w-607px h-829px m-auto mt-20 rounded-xl bg-gradient-to-b from-purple-900 via-indigo-800 to-purple-900 " >
+    <div className="w-607px h-829px m-auto mt-20 rounded-xl bg-gradient-to-b from-purple-900 via-indigo-800 to-purple-900 ml-20 mr-20 " >
       <div className="mt-7 flex justify-center">
         <img src={wicon} alt="" />
       </div>
